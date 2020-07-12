@@ -1,38 +1,29 @@
 <?php  
 
-//Loops
+//comparisons booleans
 
-$ninjas = ['gudy', 'tope', 'dinma'];
+	// echo 5 < 10;
+	// echo 5 > 10;
+	// echo 5 == 10;
+	// echo 10 == 10;
+	// echo 5 != 10;
+	// echo 5 <= 5;
+	// echo 5 >= 5;
 
-// for($i = 0; $i < count($ninjas); $i++) {
-// 	echo $ninjas[$i] . '<br/>';
-// }
+//echo 'shaun' < 'yoshi';
 
-// foreach ($ninjas as $ninja) {
-// 	echo $ninja . '<br/>';
-// }
-
-$products = [
-	['name' => 'cornflakes', 'price' => 100],
-	['name' => 'beverage', 'price' => 60],
-	['name' => 'bleach', 'price' => 80],
-	['name' => 'soap', 'price' => 10],
-	['name' => 'sugar', 'price' => 60],
-	['name' => 'milk', 'price' => 45]
-];
+// echo 'shaun' < 'Shaun';
+//echo 'gudy' == 'Gudy';
 
 
-// foreach ($products as $product) {
-// 	echo $product['name'] . ' - ' . $product['price'];
-// 	echo "<br/>";
-// }
-// $i = 0;
+//loose vs strict equal comparison
 
-// while($i < count($products)) {
-// 	echo $products[$i]['name'];
-// 	echo "<br/>";
-// 	$i++;
-// }
+//echo 5 == '5';
+//echo 5 === '5';
+
+echo true == "1";
+echo false == "";
+
 
 
 ?>
@@ -44,16 +35,7 @@ $products = [
 </head>
 <body>
 	
-	<h1>Products</h1>
-	<ul>
-		<?php foreach ($products as $product) {  ?>
 
-			<h3> <?php echo $product['name']; ?> </h3>
-			<p><?php echo $product['price'];?> Pounds  </p>
-				
-		<?php } ?>
-		
-	</ul>
 
 
 </body>
