@@ -1,24 +1,34 @@
 <?php  
 
-	$stringOne = 'my emial is ';
-	$stringTwo = 'tope123@yahoo.co.uk';
+	$radius = 25;  //integer
+	$pi = 3.14;		//floats
 
-	// echo "$stringOne.$stringTwo";
 
-	$name = 'Tope';
+	// echo $pi * $radius**2;
 
-	// echo 'Hey! my name is ' .$name;
+	// echo 2 * (4 + 9) / 3;
 
-	// echo "Hey! my name is $name";
-	// echo "The ninja screamed \"whaaaaaa\"";
-	// echo 'Gudy screamed "whaaaaa"';
 
-	// echo $name[0];
+	//increment & decrement
 
-	// echo strlen($stringOne);
-	// echo strtoupper($name);
-	// echo strtolower($name);
-	echo str_replace('o', 'i', $name);
+	// $radius++;
+	// echo $radius;
+	// $radius--;		
+	// echo $radius;
+
+	$age = 20;
+
+	// $age -=10;
+	// echo " $age";
+
+
+	//number functions
+
+	// echo floor($pi);
+
+	// echo ceil($pi);
+
+	echo pi();
 ?>
 
 <!DOCTYPE html>
