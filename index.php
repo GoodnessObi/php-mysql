@@ -1,93 +1,38 @@
 <?php  
 
-	// indexed arrays
+//Loops
 
-	$peopleOne = ['peter', 'lily', 'blair'];
+$ninjas = ['gudy', 'tope', 'dinma'];
 
-	// echo $peopleOne[1];
+// for($i = 0; $i < count($ninjas); $i++) {
+// 	echo $ninjas[$i] . '<br/>';
+// }
 
-	$peopleTwo = array('ken', 'chun-li');
-	// echo $peopleTwo[0];
+// foreach ($ninjas as $ninja) {
+// 	echo $ninja . '<br/>';
+// }
 
-
-	$ages = [20, 60, 30];
-	// print_r($ages);
-
-	$ages[0] = 67;
-
-	//print_r($ages);
-
-	$ages[] = 89;
-
-	// print_r($ages);
-
-	array_push($ages, 70);
-	// print_r($ages);
-
-	//echo count($ages);
-
-	$peopleThree = array_merge($peopleOne, $peopleTwo);
-
-	// echo print_r($peopleThree);
+$products = [
+	['name' => 'cornflakes', 'price' => 100],
+	['name' => 'beverage', 'price' => 60],
+	['name' => 'bleach', 'price' => 80],
+	['name' => 'soap', 'price' => 10],
+	['name' => 'sugar', 'price' => 60],
+	['name' => 'milk', 'price' => 45]
+];
 
 
+// foreach ($products as $product) {
+// 	echo $product['name'] . ' - ' . $product['price'];
+// 	echo "<br/>";
+// }
+// $i = 0;
 
-	// associative arrays (key & value pairs)
-
-	$superHeroOne = ['gudy' => 'wonderwoman', 'tunu' => 'superman', 'grace' => 'greenlantern'];
-
-	//echo $superHeroOne['gudy'];
-
-	//print_r($superHeroOne);
-
-	$superHeroTwo = array('grain' => 'rice', 'legume' => 'beans');
-	// print_r($superHeroTwo);
-
-
-	$superHeroTwo['fruit'] = 'apple';
-
-	//print_r($superHeroTwo);
-
-	$superHeroTwo['grain'] = 'barley';
-
-	//print_r($superHeroTwo);
-
-	//echo count($superHeroOne);
-
-	$superHeroThree = array_merge($superHeroOne, $superHeroTwo);
-	//print_r($superHeroThree);
-
-
-	//multidimensional array - arrays within arrays
-
-	// $blogs = [
-	// 	['lucy\'s life', 'lucy', 'lorem', 30],
-	// 	['gudy food', 'gudy', 'lorem', 15],
-	// 	['tunu blog', 'itunu', 'lorem ipsum', 50]
-	// ];
-
-	//print_r($blogs[2][1]);
-
-
-
-	$blogs = [
-		['title' => 'lucy\'s life', 'author' => 'lucy', 'content' => 'lorem', 'likes' => 30],
-		['title' => 'gudy food', 'author' => 'gudy', 'content' => 'lorem', 'likes' => 15],
-		['title' => 'tunu blog', 'author' => 'itunu', 'content' => 'lorem ipsum', 'likes' => 50]
-	];
-
-	//echo $blogs[0]['author'];
-	//echo count($blogs);
-
-	$blogs[] = ['title' => 'party city', 'author' => 'tope', 'content' => 'lorem ipsum', 'likes' => 80];
-
-	//print_r($blogs);
-
-
-	$popped = array_pop($blogs);
-
-	print_r($popped);
-
+// while($i < count($products)) {
+// 	echo $products[$i]['name'];
+// 	echo "<br/>";
+// 	$i++;
+// }
 
 
 ?>
@@ -99,7 +44,17 @@
 </head>
 <body>
 	
+	<h1>Products</h1>
+	<ul>
+		<?php foreach ($products as $product) {  ?>
+
+			<h3> <?php echo $product['name']; ?> </h3>
+			<p><?php echo $product['price'];?> Pounds  </p>
+				
+		<?php } ?>
+		
+	</ul>
 
 
 </body>
-</html>
+</html> 
