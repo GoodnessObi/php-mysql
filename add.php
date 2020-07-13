@@ -35,7 +35,15 @@
 				$errors['ingredients'] = "Ingredients must be a comma seperated list  ";
 			}
 		} 
-	} // end of POST check
+
+		if (array_filter($errors)) {
+			//echo "there are errors in the form";
+		} else {
+			// echo "form is valid";
+			header(('Location: index.php'));
+		}
+
+	} // end of POST check 
 
 
 
@@ -67,4 +75,4 @@
 	
 
 	<?php include ('templates/footer.php'); ?> 
-</html>
+</html>  
