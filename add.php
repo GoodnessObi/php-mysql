@@ -1,16 +1,36 @@
 <?php  
 	
-	// if (isset($_GET['submit'])) {
-	// 	echo $_GET['email'] . '<br/>';
-	// 	echo $_GET['title'] . '<br/>';
-	// 	echo $_GET['ingredients'] . '<br/>';
-	// }
-
 	if (isset($_POST['submit'])) {
-		echo $_POST['email'] . '<br/>';
-		echo $_POST['title'] . '<br/>';
-		echo $_POST['ingredients'] . '<br/>';
-	}
+		//echo htmlspecialchars($_POST['email'] . '<br/>');
+		//echo htmlspecialchars($_POST['title'] . '<br/>');
+		//echo htmlspecialchars($_POST['ingredients'] . '<br/>');
+
+		//check email
+		if (empty($_POST['email'])) {
+			echo "An email is required <br/>";
+		} else {
+			$email = $_POST['email'];
+			if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+				echo "email must be a valid email address";
+			}
+		}
+
+		//check title
+			if (empty($_POST['title'])) {
+			echo "A title is required <br/>";
+		} else {
+			echo htmlspecialchars($_POST['title']);
+		}
+
+		//check ingredients
+			if (empty($_POST['ingredients'])) {
+			echo "At least one ingredient required <br/>";
+		} else {
+			echo htmlspecialchars($_POST['ingredients']);
+		}
+	} // end of POST check
+
+
 
 
 
@@ -22,8 +42,7 @@
 
 	<?php include ('templates/header.php'); ?> 
 	<section class="container grey-text">
-		<h4 class="center">Add a Pizza</h4>
-		<form class="white" action="add.php" method="POST">
+ 		<form class="white" action="add.php" method="POST">
 			<label>Your Email:</label>
 			<input type="text" name="email">
 			<label>Pizza Title:</label>
