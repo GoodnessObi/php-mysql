@@ -1,13 +1,6 @@
 <?php  
 
-	// Connect to database
-	$conn = mysqli_connect('localhost', 'Gudy', 'temitopeobi@24', 'gudy pizza');
-
-	//check connection
-
-	if(!$conn) {
-		echo "connection error: " . mysqli_connect_error();
-	}
+	include ('config/db_connect.php');
 
 	//write query for all pizzas
 
@@ -63,12 +56,12 @@
 			<?php endforeach ?>
 
 			<!-- alternate logic syntax -->
-
-			<?php if(count($pizzas) >= 3): ?>
+<!-- 
+			<?php //if(count($pizzas) >= 3): ?>
 				<p>there are 2 more pizzas</p>
-			<?php else : ?>
+			<?php// else : ?>
 				<p>there are less than 2 pizza</p>
-			<?php endif; ?>
+			<?php// endif; ?> -->
 
 		</div>
 	</div>
