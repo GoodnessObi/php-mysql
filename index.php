@@ -28,7 +28,7 @@
 	// print_r($pizzas);
 
 	
-	print_r(explode(',', $pizzas[0]['ingredients']));
+	//print_r(explode(',', $pizzas[0]['ingredients']));
 	
 ?>
 
@@ -40,7 +40,7 @@
 	<h4 class="center grey-text">Pizzas!</h4>
 	<div class="container">
 		<div class="row">
-			<?php foreach ($pizzas as $pizza) { ?>
+			<?php foreach ($pizzas as $pizza): ?>
 				
 				<div class="col s6 md3">
 					<div class="card z-depth-0">
@@ -48,9 +48,9 @@
 							<h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
 							<div>
 								<ul>
-									<?php foreach (explode(',', $pizza['ingredients']) as $ing){ ?>
+									<?php foreach (explode(',', $pizza['ingredients']) as $ing) : ?>
 											<li><?php echo htmlspecialchars($ing); ?></li>
-									<?php } ?>
+									<?php endforeach ?>
 								</ul>
 							</div>
 						</div>
@@ -60,7 +60,16 @@
 					</div>
 				</div>
 
-			<?php } ?>
+			<?php endforeach ?>
+
+			<!-- alternate logic syntax -->
+
+			<?php if(count($pizzas) >= 3): ?>
+				<p>there are 2 more pizzas</p>
+			<?php else : ?>
+				<p>there are less than 2 pizza</p>
+			<?php endif; ?>
+
 		</div>
 	</div>
 	
