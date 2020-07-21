@@ -78,7 +78,7 @@
 
 	<?php include ('templates/header.php'); ?> 
 	<section class="container grey-text">
- 		<form class="white" action="add.php" method="POST">
+ 		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 			<label>Your Email:</label>
 			<input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
 			<div class="red-text"><?php echo $errors['email']; ?></div>
