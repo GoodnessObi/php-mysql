@@ -1,14 +1,19 @@
 <?php 
 
-//superglobals
+//sessions
+//server keeping trcak of variables in the server between requests/loading different pages
+//lasts until you close a webpage
 
-//$_GET['name'], $_POST['name']
+if (isset($_POST['submit'])) {
 
-//different info about the server
-echo $_SERVER['SERVER_NAME'] . '<br/>';
-echo $_SERVER['REQUEST_METHOD'] . '<br/>';
-echo $_SERVER['SCRIPT_FILENAME'] . '<br/>';
-echo $_SERVER['PHP_SELF'] . '<br/>';
+	session_start();
+
+	$_SESSION['name'] = $_POST['name'];
+
+	//echo $_SESSION['name'];
+	header('location: index.php');
+}
+
 
 ?>
 
@@ -20,6 +25,10 @@ echo $_SERVER['PHP_SELF'] . '<br/>';
 </head>
 <body>
 
+	<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+		<input type="text" name="name">
+		<input type="submit" name="submit" value="submit">
+	</form>
 		
 
 </body>
